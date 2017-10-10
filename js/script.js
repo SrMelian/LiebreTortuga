@@ -4,11 +4,12 @@
  *  -- Completar función checkWin
  *  -- Imprimir todo por consola
  *  -- Crear función para hacerlo de golpe
- *  - Implementar funciones arrow en el printWin
- *  - Implementar tercer animal
  *  -- Cambiar todas las impresiones por asignar a una variable, e imprimir al final de la función
  *  -- Desplegar de checkWin un printWin
  *  -- Finalizar el cambio de impresión de registro a sobreescritura
+ *  - Implementar funciones arrow en el printWin
+ *  - Implementar tercer animal
+ *  - Comentar todo
  */
 
 // #region Clase Animal

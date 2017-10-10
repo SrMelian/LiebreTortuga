@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/title.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Carrera épica</title>
 </head>
+
 <body>
-    <h1>La carrera más épica de la historia</h1>
-    <button onclick="stepByStep(true)" class="disabler">Paso a paso</button>
-    <button onclick="result()" class="disabler">Ver resultado</button>
-    <button onclick="reset()">Reiniciar</button>
-    <div id="wrapper"><p id="circuit"></p></div>
+    <div class="center-wrap">
+        <div class="title-container">
+            <div class="ribbon-left"></div>
+            <div class="backflag-left"></div>
+            <div class="title"><a>La carrera más épica de la historia</a></div>
+            <div class="backflag-right"></div>
+            <div class="ribbon-right"></div>
+        </div>
+    </div>
+</br>
+    <div id="buttons">
+        <button onclick="stepByStep(true)" class="disabler blue">Paso a paso</button>
+        <button onclick="result()" class="disabler green">Ver resultado</button>
+        <button onclick="reset()" class="yellow">Reiniciar</button>
+    </div>
+    <div id="wrapper">
+        <p id="circuit"></p>
+    </div>
     <div id="foot"></div>
 </body>
+
 </html>
