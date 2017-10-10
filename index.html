@@ -13,25 +13,31 @@
 </head>
 
 <body>
-    <div class="center-wrap">
-        <div class="title-container">
-            <div class="ribbon-left"></div>
-            <div class="backflag-left"></div>
-            <div class="title"><a>La carrera más épica de la historia</a></div>
-            <div class="backflag-right"></div>
-            <div class="ribbon-right"></div>
+    <div id="background">
+        <div class="center-wrap">
+            <div class="title-container">
+                <div class="ribbon-left"></div>
+                <div class="backflag-left"></div>
+                <div class="title">
+                    <a href="#">La carrera más épica de la historia</a>
+                </div>
+                <div class="backflag-right"></div>
+                <div class="ribbon-right"></div>
+            </div>
+        </div>
+        </br>
+        <div id="buttons">
+            <button onclick="stepByStep(true)" class="disabler blue">Paso a paso</button>
+            <button onclick="result()" class="disabler green">Ver resultado</button>
+            <button onclick="reset()" class="yellow">Reiniciar</button>
+        </div>
+        <div id="wrapper">
+            <p id="circuit"></p>
+        </div>
+        <div>
+            <p id="foot"></p>
         </div>
     </div>
-</br>
-    <div id="buttons">
-        <button onclick="stepByStep(true)" class="disabler blue">Paso a paso</button>
-        <button onclick="result()" class="disabler green">Ver resultado</button>
-        <button onclick="reset()" class="yellow">Reiniciar</button>
-    </div>
-    <div id="wrapper">
-        <p id="circuit"></p>
-    </div>
-    <div id="foot"></div>
 </body>
 
 </html>

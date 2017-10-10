@@ -39,10 +39,19 @@ Animal.prototype.reset = function () {
  * Función que decide el movimiento que hará cada animal, no devuelve nada
  */
 Animal.prototype.giveMeMove = function () {
-    var movesArray = { rapido: 3, deslizarse: -6, lento: 1, dormido: 0, granSalto: 9, deslizamientoGrande: -12, saltoPequenio: 1, deslizamientoPequenio: -2 };
+    var movesArray = {
+        rapido: 3,
+        deslizarse: -6,
+        lento: 1,
+        dormido: 0,
+        granSalto: 9,
+        deslizamientoGrande: -12,
+        saltoPequenio: 1,
+        deslizamientoPequenio: -2
+    };
     var percent = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 
-    if (this.name == "tortuga") 
+    if (this.name == "tortuga")
         switch (true) {
             case percent <= 5:
                 this.pos += movesArray["rapido"];
@@ -54,7 +63,7 @@ Animal.prototype.giveMeMove = function () {
                 this.pos += movesArray["lento"];
                 break;
         }
-    else 
+    else
         switch (true) {
             case percent <= 2:
                 this.pos += movesArray["dormido"];
@@ -72,7 +81,7 @@ Animal.prototype.giveMeMove = function () {
                 this.pos += movesArray["deslizamientoPequenio"];
                 break;
         }
-    
+
     if (this.pos < 0)
         this.pos = 0;
     else if (this.pos >= lenghtCircuit)
@@ -97,8 +106,7 @@ function stepByStep(option) {
     if (firstTime) {
         print(option);
         firstTime = false;
-    }
-    else {
+    } else {
         liebre.giveMeMove();
         tortuga.giveMeMove();
         print(option);
@@ -136,8 +144,7 @@ function print(option) {
         if (tortuga.pos == liebre.pos && tortuga.pos == i) {
             str += "X";
             str2 = "</br>OUCH!";
-        }
-        else if (i == tortuga.pos)
+        } else if (i == tortuga.pos)
             str += tortuga.char;
         else if (i == liebre.pos)
             str += liebre.char;
@@ -165,12 +172,10 @@ function printWin() {
     if (liebre.win && tortuga.win) {
         str = "Es un empate";
         out = true;
-    }
-    else if (liebre.win) {
+    } else if (liebre.win) {
         str = "Ganó la liebre... que bien!! yuhu";
         out = true;
-    }
-    else if (tortuga.win) {
+    } else if (tortuga.win) {
         str = "GANÓ LA TORTUGA! YEAH!";
         out = true;
     }
@@ -178,5 +183,5 @@ function printWin() {
     console.log(str);
     document.getElementById("foot").innerHTML = str;
 
-    return(out);
+    return (out);
 }

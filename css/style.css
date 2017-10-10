@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,900);
-
 p {
     font-family: monospace !important;
     font-size: 16px;
@@ -12,8 +11,17 @@ p {
     text-align: center;
 }
 
-h1 {
-    font-family: "Cinzel Decorative", cursive;
+#background {
+    margin: 2% 10%;
+    position: relative;
+    z-index: 0;
+    background-color: #6B818C;
+    -webkit-border-radius: 42px;
+    -moz-border-radius: 42px;
+    border-radius: 42px;
+    -webkit-box-shadow: 6px 6px 16px #2F4F4F;
+    -moz-box-shadow: 6px 6px 16px #2F4F4F;
+    box-shadow: 6px 6px 16px #2F4F4F;
 }
 
 button::-webkit-outer-spin-button,
@@ -27,41 +35,37 @@ button::-webkit-inner-spin-button {
     margin: 0 auto;
 }
 
-#buttons > button {
+#buttons>button {
     transition: all 0.1s;
     -webkit-transition: all 0.1s;
-	padding: 6px 24px;
+    padding: 6px 24px;
     margin: 0px 10px 10px 0px;
-	border-radius: 10px;
-	font-size: 15px;
-	color: #FFF;
-	text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #FFF;
+    text-decoration: none;
 }
 
-#buttons > button:active
-{
-	transform: translate(0px,5px);
-    -webkit-transform: translate(0px,5px);
-	border-bottom: 1px solid;
+#buttons>button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
 }
 
-.blue
-{
-	background-color: rgb(60, 140, 231);
-	border-bottom: 5px solid #447596;
-	text-shadow: 0px -2px #447596;
+.blue {
+    background-color: rgb(60, 140, 231);
+    border-bottom: 5px solid #447596;
+    text-shadow: 0px -2px #447596;
 }
 
-.green
-{
-	background-color: #82BF56;
-	border-bottom: 5px solid #669644;
-	text-shadow: 0px -2px #669644;
+.green {
+    background-color: #82BF56;
+    border-bottom: 5px solid #669644;
+    text-shadow: 0px -2px #669644;
 }
 
-.yellow
-{
-	background-color: #F2CF66;
-	border-bottom: 5px solid #D1B358;
-	text-shadow: 0px -2px #D1B358;
+.yellow {
+    background-color: #F2CF66;
+    border-bottom: 5px solid #D1B358;
+    text-shadow: 0px -2px #D1B358;
 }
