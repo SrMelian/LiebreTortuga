@@ -1,0 +1,1 @@
+La aportación que he implementado es un lobo que puede comerse a la liebre, pero no a la tortuga. Si este se come a la liebre automáticamente se declara vencedora a la tortuga

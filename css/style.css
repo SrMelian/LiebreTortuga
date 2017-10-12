@@ -69,3 +69,9 @@ button::-webkit-inner-spin-button {
     border-bottom: 5px solid #D1B358;
     text-shadow: 0px -2px #D1B358;
 }
+
+.red {
+    background-color: rgb(236, 102, 102);
+    border-bottom: 5px solid rgb(173, 50, 50);
+    text-shadow: 0px -2px rgb(173, 50, 50);
+}

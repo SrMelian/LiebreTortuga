@@ -1,3 +1,7 @@
+/*
+ * Author - Manuel Melián Hernández
+ */
+
 /**
  * Class animal
  * @constructor
@@ -9,6 +13,7 @@ function Animal(name, char) {
     this.char = char;
     this.pos = 0;
     this.win = false;
+    this.dead = false;
 }
 
 /**
@@ -33,7 +38,6 @@ Animal.prototype.giveMeMove = function () {
         saltoPequenio: 1,
         deslizamientoPequenio: -2
     };
-    // percent = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 
     if (this.name == "tortoise")
         switch (true) {

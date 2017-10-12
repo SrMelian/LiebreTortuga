@@ -1,22 +1,28 @@
-/**
- * TO DO LIST
- *  -- Añadir checkWin en la función stepByStep
- *  -- Completar función checkWin
- *  -- Imprimir todo por consola
- *  -- Crear función para hacerlo de golpe
- *  -- Cambiar todas las impresiones por asignar a una variable, e imprimir al final de la función
- *  -- Desplegar de checkWin un printWin
- *  -- Finalizar el cambio de impresión de registro a sobreescritura
- *  - Implementar funciones arrow en el printWin
- *  - Implementar tercer animal
- *  - Comentar todo
- *  - Modificar aleatorio, usar solo uno, guardar en variable global
+/*
+ * Author - Manuel Melián Hernández
  */
 
+/**
+ * Establishes the length of game's platform
+ */
 const lengthCircuit = 70;
+
+/**
+ * Boolean var, which save if the first move it's already done
+ */
 var firstTime = true;
 var hare = new Animal("hare", "L");
 var tortoise = new Animal("tortoise", "T");
+var wolf;
+
+/**
+ * Save if the wolf is up
+ */
+var wolfUp = false;
+
+/**
+ * Save the number between 1 and 10, which choose the move of each animal
+ */
 var percent = 0;
 
 /**
@@ -28,8 +34,19 @@ function stepByStep(option) {
     if (firstTime) {
         print(option);
         firstTime = false;
-    } else {
-        percent = giveMeRandom();
+    } else if (wolfUp) {
+        percent = giveMeRandom(1, 10);
+        hare.giveMeMove();
+        tortoise.giveMeMove();
+        wolf.giveMeMove();
+        print(option);
+        wolf.checkFood(hare, tortoise);
+        hare.checkWin();
+        tortoise.checkWin();
+        printWin();
+    }
+    else {
+        percent = giveMeRandom(1, 10);
         hare.giveMeMove();
         tortoise.giveMeMove();
         print(option);
@@ -49,12 +66,24 @@ function result() {
 }
 
 /**
+ * Initialize the wolf object
+ */
+function wakeUpWolf() {
+    wolf = new EvilAnimal("wolf", "W");
+    wolfUp = true;
+    document.getElementById("wolf").disabled = true;
+}
+
+/**
  * Method to reset all var required, and print again the game.
  */
 function reset() {
+    if (wolfUp)
+        wolf.reset();
     hare.reset();
     tortoise.reset();
     firstTime = true;
+    wolfUp = false;
     print(true);
     printWin();
     disableButtons(false);
@@ -79,10 +108,24 @@ function print(option) {
     var str2 = "";
 
     for (var i = 0; i < lengthCircuit; i++) {
+        if (wolfUp) {
+            if (wolf.pos == hare.pos && wolf.pos == i) {
+                str += wolf.char;
+                str2 = "</br>El lobo se ha comido a la liebre";
+            } 
+            else if (wolf.pos == tortoise.pos && wolf.pos == i) {
+                str += tortoise.char;
+                str2 = "</br>La tortuga se ha escondido en su caparazón";
+            } 
+            else if (i == wolf.pos)
+            str += wolf.char;
+        }
+
         if (tortoise.pos == hare.pos && tortoise.pos == i) {
             str += "X";
             str2 = "</br>OUCH!";
-        } else if (i == tortoise.pos)
+        }
+        else if (i == tortoise.pos)
             str += tortoise.char;
         else if (i == hare.pos)
             str += hare.char;
@@ -105,29 +148,23 @@ function print(option) {
  */
 function printWin() {
     var str = "";
-    var out = false;
 
-    if (hare.win && tortoise.win) {
+    if (hare.win && tortoise.win)
         str = "Es un empate";
-        out = true;
-    } else if (hare.win) {
+    else if (hare.win)
         str = "Ganó la liebre... que bien!! yuhu";
-        out = true;
-    } else if (tortoise.win) {
+    else if (tortoise.win)
         str = "GANÓ LA TORTUGA! YEAH!";
-        out = true;
-    }
 
     console.log(str);
     document.getElementById("foot").innerHTML = str;
-
-    return (out);
 }
 
 /**
- * Function to give a random number between 1 and 10
+ * Returns a random number
+ * @param {int} min Bottom limit the random generator
+ * @param {int} max Top limit the random generator
  */
-var giveMeRandom = () => {
-    var max = 10;
-    var min = 1;
-    return Math.floor(Math.random() * (max - min + 1)) + min;};
+var giveMeRandom = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
