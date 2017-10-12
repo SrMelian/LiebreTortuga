@@ -82,7 +82,7 @@ function reset() {
         wolf.reset();
     hare.reset();
     tortoise.reset();
-    firstTime = true;
+    // firstTime = true;
     wolfUp = false;
     print(true);
     printWin();
@@ -112,10 +112,12 @@ function print(option) {
             if (wolf.pos == hare.pos && wolf.pos == i) {
                 str += wolf.char;
                 str2 = "</br>El lobo se ha comido a la liebre";
+                continue;
             } 
             else if (wolf.pos == tortoise.pos && wolf.pos == i) {
                 str += tortoise.char;
                 str2 = "</br>La tortuga se ha escondido en su caparazón";
+                continue;
             } 
             else if (i == wolf.pos)
             str += wolf.char;
