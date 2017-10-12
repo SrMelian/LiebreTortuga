@@ -19,7 +19,6 @@ function EvilAnimal(name, char) {
  */
 EvilAnimal.prototype.reset = function () {
     this.pos = 0;
-    this.win = false;
 }
 
 /**
