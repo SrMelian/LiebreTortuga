@@ -1,1 +1,3 @@
-La aportación que he implementado es un lobo que puede comerse a la liebre, pero no a la tortuga. Si este se come a la liebre automáticamente se declara vencedora a la tortuga
+La aportación que he implementado es un lobo que puede comerse a la liebre, pero no a la tortuga. Si este se come a la liebre automáticamente se declara vencedora a la tortuga.
+El lobo se mueve aleatoriamente por toda la plataforma.
+Para usar la implementación podemos soltar al lobo en cualquier momento de la partida, y continuará hasta el final con el botón de paso a paso, o el de ver resultado. Al pulsar el botón reiniciar el lobo desaparece para la siguiente partida a no ser que vuelva a ser soltado.
